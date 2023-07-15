@@ -3,6 +3,8 @@ Example. Create project with Spring Boot
 
 ## Заметки
 
+http://localhost:8080/paging?pageNumber=0&pageSize=2&sortBy=name
+
 ### Пошагово
 
 Шаг 1: Создайте новый проект Spring Boot.
