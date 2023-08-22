@@ -27,6 +27,23 @@ public class EmployeeServiceImpl implements EmployeeService {
         return employeeRepo.findAll();
     }
 
+    public Employee findById(int id) {
+        return employeeRepo.findById(id).orElseThrow();
+    }
+
+    public Employee save(Employee employee) {
+        return employeeRepo.save(employee);
+    }
+
+    public Employee update(int id, Employee employee) {
+        employee.setId(id);
+        return employeeRepo.save(employee);
+    }
+
+    public void delete(int id) {
+        employeeRepo.deleteById(id);
+    }
+
     public Page<Employee> getEmployees(int pageNumber, int pageSize, String sortBy) {
         Pageable pageable = PageRequest.of(pageNumber, pageSize, Sort.by(sortBy));
         return employeeRepo.findAll(pageable);
